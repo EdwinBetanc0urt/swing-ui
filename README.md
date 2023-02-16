@@ -146,4 +146,4 @@ Extensions to Install:
 - [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)
 
 #### Execute
-![Swing Example Visual Studio Code](./docs/adempiere-swing-ui-debug-vs-code.mp4)
+![Swing Example Visual Studio Code](./docs/adempiere-swing-ui-debug-vs-code.gif)
