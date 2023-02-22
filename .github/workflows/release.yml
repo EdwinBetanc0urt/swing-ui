@@ -43,12 +43,12 @@ jobs:
       - name: Upload zip
         uses: skx/github-action-publish-binaries@master
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_ACCESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: 'build/release/*.zip'
       - name: Upload zip.MD5
         uses: skx/github-action-publish-binaries@master
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_ACCESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: 'build/release/*.zip.MD5'
