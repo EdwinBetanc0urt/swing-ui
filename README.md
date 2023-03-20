@@ -4,13 +4,13 @@
   <a href="https://adoptium.net/es/temurin/releases/?version=11">
     <img src="https://badgen.net/badge/Java/11/orange" alt="Java">
   </a>
-  <a href="https://github.com/adempiere/adempiere-swing-ui/actions/workflows/ci.yml">
-    <img src="https://github.com/adempiere/adempiere-swing-ui/actions/workflows/ci.yml/badge.svg" alt="Build GH Action">
+  <a href="https://github.com/adempiere/swing-ui/actions/workflows/build.yml">
+    <img src="https://github.com/adempiere/swing-ui/actions/workflows/build.yml/badge.svg" alt="Build GH Action">
   </a>
-  <a href="https://github.com/adempiere/adempiere-swing-ui/blob/master/LICENSE">
+  <a href="https://github.com/adempiere/swing-ui/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-GNU/GPL%20(v2)-blue" alt="License">
   </a>
-  <a href="https://github.com/adempiere/adempiere-swing-ui/releases/latest">
+  <a href="https://github.com/adempiere/swing-ui/releases/latest">
     <img src="https://img.shields.io/github/release/adempiere/swing-ui.svg" alt="GitHub release">
   </a>
   <a href="https://discord.gg/T6eH6A7PJZ">
