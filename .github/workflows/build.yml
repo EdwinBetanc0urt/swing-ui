@@ -5,18 +5,33 @@ name: ADempiere Swing UI Build event with gradle
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the develop branch
   push:
-   branches: [ "master", "develop", "bugfix/*", "feature/*" ]
+    branches:
+      - '*'         # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+    paths-ignore:
+      - README.md
+      - README.es.md
+
   pull_request:
-    branches: [ "master", "develop", "bugfix/*", "feature/*" ]
+    branches:
+      - main
+      - master
+      - develop
+      - experimental
+      - bugfix/**
+      - feature/**
+    paths-ignore:
+      - README.md
+      - README.es.md
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
   # Build dist application backend
   build-app:
-    name: Build with gradle
+    name: Build Project
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -31,12 +46,11 @@ jobs:
           architecture: x64
 
       - name: Build with Gradle
-        run: gradle build
+        uses: gradle/gradle-build-action@v2
         env:
-          ADEMPIERE_LIBRARY_VERSION: 'test-version'
-          
-      - name: Upload Binary Files
-        uses: actions/upload-artifact@v3
+          GITHUB_DEPLOY_USER: "${{ github.actor }}"
+          GITHUB_DEPLOY_TOKEN: "${{ secrets.DEPLOY_TOKEN }}"
+          GITHUB_DEPLOY_REPOSITORY: ${{ secrets.DEPLOY_REPOSITORY }}
         with:
-            name: adempiere-swing-ui
-            path: build/distributions/
+          gradle-version: 8.0.2
+          arguments: build
