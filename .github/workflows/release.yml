@@ -32,7 +32,9 @@ jobs:
       - name: Create Release
         run: gradle createRelease
         env:
-          ADEMPIERE_LIBRARY_VERSION: 'test-version'
+          GITHUB_DEPLOY_USER: ${{ github.actor }}
+          GITHUB_DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          GITHUB_DEPLOY_REPOSITORY: ${{ secrets.DEPLOY_REPOSITORY }}
           
       - name: Upload Binary Files
         uses: actions/upload-artifact@v3
